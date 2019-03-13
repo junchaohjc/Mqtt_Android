@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         mqttConnectOptions.setCleanSession(false);
 
         try {
+            //mqtt链接
                 mqttAndroidClient.connect(mqttConnectOptions, null, new IMqttActionListener() {
                 @Override
                 public void onSuccess(IMqttToken asyncActionToken) {
@@ -75,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
 
                 }
             });
-
         } catch (MqttException ex){
             ex.printStackTrace();
         }
@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
+    //发布消息
     public void publishMessage(){
 
         try {
